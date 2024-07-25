@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "server"
+		},
+		{
+			"path": "client"
+		}
+	],
+	"settings": {
+		"codium.codeCompletion.enable": true,
+		"liveServer.settings.multiRootWorkspaceName": "server"
+	}
+}
