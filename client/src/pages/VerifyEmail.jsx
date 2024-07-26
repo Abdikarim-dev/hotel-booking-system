@@ -15,7 +15,7 @@ const schema = z.object({
   }),
 });
 
-function ForgotAccount() {
+function VerifyEmail() {
   const {
     register,
     handleSubmit,
@@ -48,7 +48,7 @@ function ForgotAccount() {
           <div className="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
             <form onSubmit={handleSubmit(handleForm)} className="w-full">
               <h1 className="pb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
-                Forgot password
+                Verify Email
               </h1>
 
               <div>
@@ -75,22 +75,22 @@ function ForgotAccount() {
                 className="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
                 type="submit"
               >
-                Recover password
+                Verify Email
               </button>
               <p className="mt-4 text-center">
                 <NavLink
                   className="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
-                  to="/verify-email"
+                  to="/"
                 >
-                  Is your Verified? Verify Email
+                  Already verified? Back to Login
                 </NavLink>
               </p>
               <p className="mt-1 text-center">
                 <NavLink
                   className="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
-                  to="/"
+                  to="/forgot-password"
                 >
-                  Back to Login
+                  Forgot Password? 
                 </NavLink>
               </p>
             </form>
@@ -101,4 +101,4 @@ function ForgotAccount() {
   );
 }
 
-export default ForgotAccount;
+export default VerifyEmail;
