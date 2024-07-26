@@ -8,6 +8,11 @@ yarn-error.log*
 backend/.env
 frontend/.env
 
+# Ignoring git values
+.gitignore
+.gitmodules
+
+
 # Logs
 logs/
 *.log
