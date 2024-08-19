@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema(
       match: [/^[a-zA-Z0-9]+$/, "Username must be alphanumeric"],
     },
     email: {
-      type: String,
+      type: String, 
       trim: true,
       lowercase: true,
       match: [/^\S+@\S+\.\S+$/, "Email is invalid"],

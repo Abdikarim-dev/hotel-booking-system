@@ -50,7 +50,7 @@ function CreateAccount() {
     resolver: zodResolver(schema),
   });
   const handleForm = (user) => {
-    console.log(user);
+    console.log(user)
   };
   return (
     <div className="font-poppins flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">

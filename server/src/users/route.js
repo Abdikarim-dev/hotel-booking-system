@@ -27,10 +27,10 @@ const {
  *             properties:
  *               username:
  *                 type: string
- *                 example: "john_doe"
+ *                 example: "Badri_hassan"
  *               email:
  *                 type: string
- *                 example: "john.doe@example.com"
+ *                 example: "cadde402@gmail.com"
  *               password:
  *                 type: string
  *                 example: "strongpassword"
@@ -53,7 +53,9 @@ const {
  *               $ref: "#/components/schemas/Error"
  */
 
-router.post("/register",guard, register);
+router.post("/", guard, createUser);
+// router.post("/register", register);
+
 
 /**
  * @swagger
@@ -163,30 +165,30 @@ router.post("/login", login);
  */
 router.get("/",guard, getUsers);
 
-/**
- * @swagger
- * /:
- *   post:
- *     summary: Create a new user
- *     tags: [Users]
- *     description: This endpoint is used to create a new user.
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/CreateUser'
- *     responses:
- *       '201':
- *         description: User created successfully
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/User'
- *     security:
- *       - bearerAuth: []
- */
-router.post("/", guard, createUser);
+// /**
+//  * @swagger
+//  * /:
+//  *   post:
+//  *     summary: Create a new user
+//  *     tags: [Users]
+//  *     description: This endpoint is used to create a new user.
+//  *     requestBody:
+//  *       required: true
+//  *       content:
+//  *         application/json:
+//  *           schema:
+//  *             $ref: '#/components/schemas/CreateUser'
+//  *     responses:
+//  *       '201':
+//  *         description: User created successfully
+//  *         content:
+//  *           application/json:
+//  *             schema:
+//  *               $ref: '#/components/schemas/User'
+//  *     security:
+//  *       - bearerAuth: []
+//  */
+// router.post("/", guard, createUser);
 
 /**
  * @swagger

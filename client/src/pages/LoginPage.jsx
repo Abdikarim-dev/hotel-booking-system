@@ -3,9 +3,12 @@ import LightPicture from "../assets/login-office.jpeg";
 import DarkPicture from "../assets/login-office-dark.jpeg";
 import { NavLink } from "react-router-dom";
 
+import axios from "axios";
+
 import z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import toast from "react-hot-toast";
 
 const schema = z.object({
   email: z.string().min(1, { message: "Email cannot be empty." }).email({
@@ -26,8 +29,17 @@ function LoginPage() {
   } = useForm({
     resolver: zodResolver(schema),
   });
-  const handleForm = (user) => {
-    console.log(user);
+  const handleForm = async (user) => {
+    try {
+      const {data} = await axios.post("api/v1/users/login", user);
+      if (data.success === true) {
+        toast.success(data.message);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className="font-poppins flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
@@ -147,7 +159,6 @@ function LoginPage() {
                   Create account
                 </NavLink>
               </p>
-              
             </form>
           </div>
         </div>
